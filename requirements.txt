@@ -1,0 +1,5 @@
+selenium
+openai
+python-dotenv
+PyGithub
+GitPython
