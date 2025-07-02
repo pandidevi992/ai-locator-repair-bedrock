@@ -2,6 +2,7 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import NoSuchElementException
+from locator_repair.config import ERROR_LOG_FILE_PATH
 from locators.locators import SAMPLE_LOCATOR
 from locator_repair.ai_locator_fix import ai_suggest_locator_fix
 from locator_repair.locator_updater import update_locator_file, commit_and_push_changes
@@ -31,7 +32,7 @@ def run_test_case():
         except Exception as e:
             print("❌ Failed to use AI-suggested locator.")
             print("Error:", str(e))
-            with open("error_log.txt", "w") as f:
+            with open(ERROR_LOG_FILE_PATH, "w") as f:
                 f.write(f"Broken locator: {SAMPLE_LOCATOR}\nError: {str(e)}\n")
     finally:
         driver.quit()

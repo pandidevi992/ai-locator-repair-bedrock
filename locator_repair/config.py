@@ -9,3 +9,4 @@ GITHUB_REPO = os.getenv("GITHUB_REPO")
 REPO_PATH = os.getenv("REPO_PATH")
 BRANCH_NAME = f"fix-broken-locator-{uuid.uuid4().hex[:6]}"
 LOCATOR_FILE_PATH = "locators/locators.py"
+ERROR_LOG_FILE_PATH = "logs/error_log.txt"
