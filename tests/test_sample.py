@@ -1,9 +1,10 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import NoSuchElementException
+from locator_repair.config import LOCATOR_FILE_PATH
 from locators.locators import EMAILBOX_LOCATOR, MESSAGES_LOCATOR, SEND_BUTTON_LOCATOR
 from locator_repair.ai_locator_fix import ai_suggest_locator_fix
-from locator_repair.locator_updater import update_locator_file, commit_and_push_changes
+from locator_repair.locator_updater import update_locator_by_variable, commit_and_push_changes
 from locator_repair.github_pr import create_pull_request
 
 def validate_and_repair(driver, locator, description, value=None, is_click=False):
@@ -56,9 +57,14 @@ def run_test_case():
     driver.quit()
 
     # Update only if at least one locator was fixed
-    if any(updated_locators.values()):
-        for old_name, new_locator in updated_locators.items():
+    if any(v for v in updated_locators.values()):
+        for locator_name, new_locator in updated_locators.items():
             if new_locator:
-                update_locator_file(old_name, new_locator)
+                update_locator_by_variable(
+                    locator_file_path=LOCATOR_FILE_PATH,
+                    locator_name=locator_name,
+                    new_locator=new_locator
+                )
         commit_and_push_changes()
         create_pull_request()
+

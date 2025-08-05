@@ -99,6 +99,23 @@ Return only the corrected Python tuple as output in this exact format:
         messages=[{'role': 'user', 'content': prompt}]
     )
 
+    # response['message']['content'] = "('By.XPATH', \"//input[@id='email']\")"
     suggestion = response['message']['content'].strip()
     print(f"[LLM Suggestion] {suggestion}")
-    return eval(suggestion)
+
+    llm_tuple = eval(suggestion)  # → ('By.XPATH', "//input[@id='email']")
+    
+    normalized = normalize_locator(llm_tuple)
+    return normalized
+    
+def normalize_locator(locator_tuple):
+    if not isinstance(locator_tuple, tuple) or len(locator_tuple) != 2:
+        raise ValueError("Locator must be a tuple like ('By.XPATH', '//selector')")
+
+    strategy, value = locator_tuple
+
+    # If it's like 'By.XPATH', extract only 'XPATH'
+    if '.' in strategy:
+        _, strategy = strategy.split('.')
+
+    return (strategy.lower(), value)
