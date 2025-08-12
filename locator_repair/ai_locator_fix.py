@@ -4,11 +4,7 @@ from selenium.webdriver.remote.webdriver import WebDriver
 from bs4 import BeautifulSoup
 from selenium.webdriver.common.by import By
 
-# ---- AWS Credentials ----
-AWS_ACCESS_KEY = "ASIAZHPEO3KQUNTU2Q4M"
-AWS_SECRET_KEY = "S7AL87oKbQgrFNR+8gFIkEslGrphnczdDozX47Og"
-AWS_SESSION_TOKEN = "IQoJb3JpZ2luX2VjEMn//////////wEaCXVzLWVhc3QtMSJGMEQCIE8mzhJsiEbVpRfcbOMhcr613w2B/i049H5zxlC1hrsQAiBiIXaHbbXUUmo3H8NoztgCYK0dPoQJC/4ffl/IqCPA3CqVAwgSEAUaDDYzNDUyMzY3MTIwMSIM+wOipInVjP/h3zsWKvIC5QV4G9h8f5YEINgQz0rcf5Q7T+whDVPbZIlv89Nt0uwM0pIWZpiLjLwpXzvOG2jvR9iTSRxlYwgbb0J9pYqu3hUCmrjG8j2OZTYMeHSKtBchSUsUYGngnvnLS/MGaH0MLN6BUXVyF8/csyh+xgYAEu7X4NmTnlx9moWHCj+VVLNAs5Vd3G3gZoA2LBooU/shmKuzosOA9wPu9TtNbj7cCf2+jM48blnMt9bVBPQn/u64DfRLlJxnLksgP0izvf3fthPtnNdVSsd1CIlvtlF18Yn/LR4lz8q7KzXPFkJ8QfoXkjunvtJveE/Xpsv0SRU2hnDSK8ut5LNoi86wMoAc2snSYZMjV0KJ6q6GaD0WjbMIoGdNN3MDITThELYjHuO/8zNIyesfKq+20sFNxjjvPJlWd60oH8xTdo1BNMHuIOwY9wTkXVMW4869uUlGVdFi8X6FhdInP6nQ0J8qzcNajRUGZJF53Ah3QI9pATOglon6ZjC7++vEBjqnAdFYHyK82AGQCPuO8t05o9cTNLmhwPYVeIhSMyjg7eweI2R6s4DxQVLtO50ZBVE5NJADMei5KYxYBAG5wj/uCgvZsd2rx2q/FpYIuNqxpT03Z25GKXECUhDo1YyMLhEwehni7Z1+lZdO+cEXwXsjSqVMUZwF8s878iXl3Bhtx5p8mus5Mxq0G5eWmKM/5vQYDZJ6wH/sNQyXXO6ffyFopV1AzQak/VEA"  # Required for temporary creds; else None/""
-AWS_REGION = "us-east-1"  # Bedrock-supported region
+from locator_repair.config import AWS_ACCESS_KEY, AWS_SECRET_KEY, AWS_SESSION_TOKEN, AWS_REGION
 
 # ---- Bedrock Client ----
 bedrock = boto3.client(
