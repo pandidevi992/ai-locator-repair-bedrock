@@ -1,3 +1,4 @@
+import time
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import NoSuchElementException
@@ -6,6 +7,7 @@ from locators.locators import USERNAME_LOCATOR, NEXT_LOCATOR, PASSWORD_LOCATOR, 
 from locator_repair.ai_locator_fix import ai_suggest_locator_fix
 from locator_repair.locator_updater import update_locator_by_variable, commit_and_push_changes
 from locator_repair.github_pr import create_pull_request
+from locator_repair.helpers.waitForElement import wait_for_element
 
 def validate_and_repair(driver, locator, description, value=None, is_click=False):
     new_locator = None
@@ -50,12 +52,16 @@ def run_test_case():
     updated_locators["NEXT_LOCATOR"] = validate_and_repair(
         driver, NEXT_LOCATOR, "Next button", is_click=True
     )
+    
+    wait_for_element(driver, *PASSWORD_LOCATOR, timeout=20)  # Ensure the page is loaded before proceeding
+
     updated_locators["PASSWORD_LOCATOR"] = validate_and_repair(
         driver, PASSWORD_LOCATOR, "Password input box", value="Password@123"
     )
     updated_locators["SUBMIT_LOCATOR"] = validate_and_repair(
-        driver, SUBMIT_LOCATOR, "Submit button", value="Password@123"
+        driver, SUBMIT_LOCATOR, "Submit button", is_click=True
     )
+    #waitForPageLoad(driver, 10)  # Ensure page is loaded before proceeding
 
     driver.quit()
 

@@ -133,3 +133,81 @@ Stacktrace:
 
 Broken locator: ('xpath', "//input[@type='submit' and @value='Submit']")
 Error: extract_relevant_html_llm() got an unexpected keyword argument 'description'
+Broken locator: ('xpath', "//input[@name='credentials.passcode']")
+Error: Message: no such element: Unable to locate element: {"method":"xpath","selector":"//input[@name='credentials.username']"}
+  (Session info: chrome=138.0.7204.50); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff65800e415+77285]
+	GetHandleVerifier [0x0x7ff65800e470+77376]
+	(No symbol) [0x0x7ff657dd9a6a]
+	(No symbol) [0x0x7ff657e30406]
+	(No symbol) [0x0x7ff657e306bc]
+	(No symbol) [0x0x7ff657e83ac7]
+	(No symbol) [0x0x7ff657e5864f]
+	(No symbol) [0x0x7ff657e8087f]
+	(No symbol) [0x0x7ff657e583e3]
+	(No symbol) [0x0x7ff657e21521]
+	(No symbol) [0x0x7ff657e222b3]
+	GetHandleVerifier [0x0x7ff6582f1efd+3107021]
+	GetHandleVerifier [0x0x7ff6582ec29d+3083373]
+	GetHandleVerifier [0x0x7ff65830bedd+3213485]
+	GetHandleVerifier [0x0x7ff65802884e+184862]
+	GetHandleVerifier [0x0x7ff65803055f+216879]
+	GetHandleVerifier [0x0x7ff658017084+113236]
+	GetHandleVerifier [0x0x7ff658017239+113673]
+	GetHandleVerifier [0x0x7ff657ffe298+11368]
+	BaseThreadInitThunk [0x0x7ffe467d259d+29]
+	RtlUserThreadStart [0x0x7ffe479eaf78+40]
+
+Broken locator: ('xpath', "//input[@name='credentials.username']")
+Error: Message: no such element: Unable to locate element: {"method":"xpath","selector":"//input[@id='username']"}
+  (Session info: chrome=138.0.7204.50); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff65800e415+77285]
+	GetHandleVerifier [0x0x7ff65800e470+77376]
+	(No symbol) [0x0x7ff657dd9a6a]
+	(No symbol) [0x0x7ff657e30406]
+	(No symbol) [0x0x7ff657e306bc]
+	(No symbol) [0x0x7ff657e83ac7]
+	(No symbol) [0x0x7ff657e5864f]
+	(No symbol) [0x0x7ff657e8087f]
+	(No symbol) [0x0x7ff657e583e3]
+	(No symbol) [0x0x7ff657e21521]
+	(No symbol) [0x0x7ff657e222b3]
+	GetHandleVerifier [0x0x7ff6582f1efd+3107021]
+	GetHandleVerifier [0x0x7ff6582ec29d+3083373]
+	GetHandleVerifier [0x0x7ff65830bedd+3213485]
+	GetHandleVerifier [0x0x7ff65802884e+184862]
+	GetHandleVerifier [0x0x7ff65803055f+216879]
+	GetHandleVerifier [0x0x7ff658017084+113236]
+	GetHandleVerifier [0x0x7ff658017239+113673]
+	GetHandleVerifier [0x0x7ff657ffe298+11368]
+	BaseThreadInitThunk [0x0x7ffe467d259d+29]
+	RtlUserThreadStart [0x0x7ffe479eaf78+40]
+
+Broken locator: ('xpath', "//input[@id='username']")
+Error: Message: no such element: Unable to locate element: {"method":"xpath","selector":"//input[@id='input53']"}
+  (Session info: chrome=138.0.7204.50); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff65800e415+77285]
+	GetHandleVerifier [0x0x7ff65800e470+77376]
+	(No symbol) [0x0x7ff657dd9a6a]
+	(No symbol) [0x0x7ff657e30406]
+	(No symbol) [0x0x7ff657e306bc]
+	(No symbol) [0x0x7ff657e83ac7]
+	(No symbol) [0x0x7ff657e5864f]
+	(No symbol) [0x0x7ff657e8087f]
+	(No symbol) [0x0x7ff657e583e3]
+	(No symbol) [0x0x7ff657e21521]
+	(No symbol) [0x0x7ff657e222b3]
+	GetHandleVerifier [0x0x7ff6582f1efd+3107021]
+	GetHandleVerifier [0x0x7ff6582ec29d+3083373]
+	GetHandleVerifier [0x0x7ff65830bedd+3213485]
+	GetHandleVerifier [0x0x7ff65802884e+184862]
+	GetHandleVerifier [0x0x7ff65803055f+216879]
+	GetHandleVerifier [0x0x7ff658017084+113236]
+	GetHandleVerifier [0x0x7ff658017239+113673]
+	GetHandleVerifier [0x0x7ff657ffe298+11368]
+	BaseThreadInitThunk [0x0x7ffe467d259d+29]
+	RtlUserThreadStart [0x0x7ffe479eaf78+40]
+
