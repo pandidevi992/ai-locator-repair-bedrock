@@ -1,0 +1,135 @@
+Broken locator: ('xpath', "//input[@id='Email']")
+Error: An error occurred (UnrecognizedClientException) when calling the Converse operation: The security token included in the request is invalid.
+Broken locator: ('xpath', "//input[@id='Email']")
+Error: An error occurred (UnrecognizedClientException) when calling the Converse operation: The security token included in the request is invalid.
+Broken locator: ('xpath', "//input[@id='Email']")
+Error: An error occurred (UnrecognizedClientException) when calling the Converse operation: The security token included in the request is invalid
+Broken locator: ('xpath', "//input[@id='Email']")
+Error: An error occurred (UnrecognizedClientException) when calling the Converse operation: The security token included in the request is invalid
+Broken locator: ('xpath', "//input[@id='Email']")
+Error: An error occurred (UnrecognizedClientException) when calling the Converse operation: The security token included in the request is invalid
+Broken locator: ('xpath', "//textarea[@id='message']")
+Error: An error occurred (UnrecognizedClientException) when calling the Converse operation: The security token included in the request is invalid
+Broken locator: ('xpath', "//input[@id='Password']")
+Error: An error occurred (UnrecognizedClientException) when calling the Converse operation: The security token included in the request is invalid
+Broken locator: ('xpath', "//span[contains(text(),'Submit')]")
+Error: An error occurred (UnrecognizedClientException) when calling the Converse operation: The security token included in the request is invalid
+Broken locator: ('xpath', "//input[@id='Email']")
+Error: An error occurred (ValidationException) when calling the Converse operation: The provided model identifier is invalid.
+Broken locator: ('xpath', "//textarea[@id='message']")
+Error: An error occurred (ValidationException) when calling the Converse operation: The provided model identifier is invalid.
+Broken locator: ('xpath', "//input[@id='Password']")
+Error: An error occurred (ValidationException) when calling the Converse operation: The provided model identifier is invalid.
+Broken locator: ('xpath', "//span[contains(text(),'Submit')]")
+Error: An error occurred (ValidationException) when calling the Converse operation: The provided model identifier is invalid.
+Broken locator: ('xpath', "//input[@id='Email']")
+Error: An error occurred (ValidationException) when calling the Converse operation: The provided model identifier is invalid.
+Broken locator: ('xpath', "//input[@id='Email']")
+Error: An error occurred (ValidationException) when calling the Converse operation: Invocation of model ID anthropic.claude-sonnet-4-20250514-v1:0 with on-demand throughput isn’t supported. Retry your request with the ID or ARN of an inference profile that contains this model.
+Broken locator: ('xpath', "//input[@id='Password']")
+Error: Message: no such element: Unable to locate element: {"method":"xpath","selector":"//input[@id='Username']"}
+  (Session info: chrome=138.0.7204.50); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff65800e415+77285]
+	GetHandleVerifier [0x0x7ff65800e470+77376]
+	(No symbol) [0x0x7ff657dd9a6a]
+	(No symbol) [0x0x7ff657e30406]
+	(No symbol) [0x0x7ff657e306bc]
+	(No symbol) [0x0x7ff657e83ac7]
+	(No symbol) [0x0x7ff657e5864f]
+	(No symbol) [0x0x7ff657e8087f]
+	(No symbol) [0x0x7ff657e583e3]
+	(No symbol) [0x0x7ff657e21521]
+	(No symbol) [0x0x7ff657e222b3]
+	GetHandleVerifier [0x0x7ff6582f1efd+3107021]
+	GetHandleVerifier [0x0x7ff6582ec29d+3083373]
+	GetHandleVerifier [0x0x7ff65830bedd+3213485]
+	GetHandleVerifier [0x0x7ff65802884e+184862]
+	GetHandleVerifier [0x0x7ff65803055f+216879]
+	GetHandleVerifier [0x0x7ff658017084+113236]
+	GetHandleVerifier [0x0x7ff658017239+113673]
+	GetHandleVerifier [0x0x7ff657ffe298+11368]
+	BaseThreadInitThunk [0x0x7ffe467d259d+29]
+	RtlUserThreadStart [0x0x7ffe479eaf78+40]
+
+Broken locator: ('xpath', "//span[contains(text(),'Submit')]")
+Error: Message: no such element: Unable to locate element: {"method":"xpath","selector":"//input[@type='submit' and @value='Submit']"}
+  (Session info: chrome=138.0.7204.50); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff65800e415+77285]
+	GetHandleVerifier [0x0x7ff65800e470+77376]
+	(No symbol) [0x0x7ff657dd9a6a]
+	(No symbol) [0x0x7ff657e30406]
+	(No symbol) [0x0x7ff657e306bc]
+	(No symbol) [0x0x7ff657e83ac7]
+	(No symbol) [0x0x7ff657e5864f]
+	(No symbol) [0x0x7ff657e8087f]
+	(No symbol) [0x0x7ff657e583e3]
+	(No symbol) [0x0x7ff657e21521]
+	(No symbol) [0x0x7ff657e222b3]
+	GetHandleVerifier [0x0x7ff6582f1efd+3107021]
+	GetHandleVerifier [0x0x7ff6582ec29d+3083373]
+	GetHandleVerifier [0x0x7ff65830bedd+3213485]
+	GetHandleVerifier [0x0x7ff65802884e+184862]
+	GetHandleVerifier [0x0x7ff65803055f+216879]
+	GetHandleVerifier [0x0x7ff658017084+113236]
+	GetHandleVerifier [0x0x7ff658017239+113673]
+	GetHandleVerifier [0x0x7ff657ffe298+11368]
+	BaseThreadInitThunk [0x0x7ffe467d259d+29]
+	RtlUserThreadStart [0x0x7ffe479eaf78+40]
+
+Broken locator: ('xpath', "//input[@id='Password']")
+Error: Message: element not interactable
+  (Session info: chrome=138.0.7204.50)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff65800e415+77285]
+	GetHandleVerifier [0x0x7ff65800e470+77376]
+	(No symbol) [0x0x7ff657dd989c]
+	(No symbol) [0x0x7ff657e29ad2]
+	(No symbol) [0x0x7ff657e27867]
+	(No symbol) [0x0x7ff657e5860a]
+	(No symbol) [0x0x7ff657e22d06]
+	(No symbol) [0x0x7ff657e58820]
+	(No symbol) [0x0x7ff657e8087f]
+	(No symbol) [0x0x7ff657e583e3]
+	(No symbol) [0x0x7ff657e21521]
+	(No symbol) [0x0x7ff657e222b3]
+	GetHandleVerifier [0x0x7ff6582f1efd+3107021]
+	GetHandleVerifier [0x0x7ff6582ec29d+3083373]
+	GetHandleVerifier [0x0x7ff65830bedd+3213485]
+	GetHandleVerifier [0x0x7ff65802884e+184862]
+	GetHandleVerifier [0x0x7ff65803055f+216879]
+	GetHandleVerifier [0x0x7ff658017084+113236]
+	GetHandleVerifier [0x0x7ff658017239+113673]
+	GetHandleVerifier [0x0x7ff657ffe298+11368]
+	BaseThreadInitThunk [0x0x7ffe467d259d+29]
+	RtlUserThreadStart [0x0x7ffe479eaf78+40]
+
+Broken locator: ('xpath', "//input[@type='submit' and @value='Submit']")
+Error: Message: invalid argument: invalid locator
+  (Session info: chrome=138.0.7204.50)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff65800e415+77285]
+	GetHandleVerifier [0x0x7ff65800e470+77376]
+	(No symbol) [0x0x7ff657dd9a6a]
+	(No symbol) [0x0x7ff657e301ce]
+	(No symbol) [0x0x7ff657e306bc]
+	(No symbol) [0x0x7ff657e83ac7]
+	(No symbol) [0x0x7ff657e5864f]
+	(No symbol) [0x0x7ff657e8087f]
+	(No symbol) [0x0x7ff657e583e3]
+	(No symbol) [0x0x7ff657e21521]
+	(No symbol) [0x0x7ff657e222b3]
+	GetHandleVerifier [0x0x7ff6582f1efd+3107021]
+	GetHandleVerifier [0x0x7ff6582ec29d+3083373]
+	GetHandleVerifier [0x0x7ff65830bedd+3213485]
+	GetHandleVerifier [0x0x7ff65802884e+184862]
+	GetHandleVerifier [0x0x7ff65803055f+216879]
+	GetHandleVerifier [0x0x7ff658017084+113236]
+	GetHandleVerifier [0x0x7ff658017239+113673]
+	GetHandleVerifier [0x0x7ff657ffe298+11368]
+	BaseThreadInitThunk [0x0x7ffe467d259d+29]
+	RtlUserThreadStart [0x0x7ffe479eaf78+40]
+
+Broken locator: ('xpath', "//input[@type='submit' and @value='Submit']")
+Error: extract_relevant_html_llm() got an unexpected keyword argument 'description'

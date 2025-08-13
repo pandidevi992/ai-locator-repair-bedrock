@@ -5,6 +5,7 @@ from bs4 import BeautifulSoup
 from selenium.webdriver.common.by import By
 
 from locator_repair.config import AWS_ACCESS_KEY, AWS_SECRET_KEY, AWS_SESSION_TOKEN, AWS_REGION
+from locator_repair.context_extractor import extract_relevant_html
 
 # ---- Bedrock Client ----
 bedrock = boto3.client(
@@ -16,40 +17,49 @@ bedrock = boto3.client(
 )
 
 # ---- Claude 3.7 Sonnet Model ----
-BEDROCK_MODEL_ID = "us.anthropic.claude-3-7-sonnet-20250219-v1:0"
+BEDROCK_MODEL_ID = "us.anthropic.claude-sonnet-4-20250514-v1:0"
 
 # ---- Existing helper functions ----
 def capture_dom(driver: WebDriver):
     return driver.page_source
 
-def extract_relevant_html(dom: str, element_keyword: str) -> str:
-    soup = BeautifulSoup(dom, 'html.parser')
-    matches = []
-    attr_keys = ["name", "id", "placeholder", "aria-label", "value"]
+def extract_relevant_html_llm(dom: str, description: str, max_matches: int) -> str:
+    
+    user_prompt = f"""
+You are an expert front-end tester. I will give you several HTML snippets from the same page and a short description of a target element.
+Choose the single snippet that best contains the element described. If none are good, return the closest snippet.
+OUTPUT RULES (IMPORTANT):
+- Return ONLY the HTML of the best snippet, with no explanations.
+- Wrap your output EXACTLY between these markers on their own lines:
+<<<RELEVANT_HTML_START>>>
+... your html here ...
+<<<RELEVANT_HTML_END>>>
 
-    for tag in soup.find_all(True):
-        if tag.string and element_keyword.lower() in tag.string.lower():
-            matches.append(tag)
-            continue
-        for attr in attr_keys:
-            if tag.has_attr(attr) and element_keyword.lower() in tag[attr].lower():
-                matches.append(tag)
-                break
+Description: {description}
 
-    if not matches:
-        return dom[:10000]
+Give me the best matching HTML snippet from the following: {max_matches}
 
-    output_snippets = []
-    for tag in matches:
-        context_tag = tag.find_parent("div", class_=lambda c: c and ("grid" in c or "col-12" in c or "ui-input" in c))
-        if not context_tag:
-            context_tag = tag.find_parent(["form", "body"])
-        if not context_tag:
-            context_tag = tag.parent
-        output_snippets.append(str(context_tag))
+HTML SNIPPETS:
+{dom}
+"""
+    response = bedrock.converse(
+        modelId=BEDROCK_MODEL_ID,
+        messages=[{
+            "role": "user",
+            "content": [{"text": user_prompt}]
+        }],
+        inferenceConfig={
+            "temperature": 0.2,
+            "maxTokens": 150,
+            "topP": 0.9
+        }
+    )
 
-    combined = "\n<!-- match -->\n".join(output_snippets)
-    return combined[:10000]
+    content = response["output"]["message"]["content"]
+    relevantHtml = "".join(part.get("text", "") for part in content).strip()
+    print(f"Extracted Html via llm {relevantHtml}")
+
+    return relevantHtml
 
 def normalize_locator(suggestion):
     """
@@ -86,7 +96,12 @@ def normalize_locator(suggestion):
 # ---- Bedrock-powered locator fix ----
 def ai_suggest_locator_fix(old_locator: str, driver: WebDriver = None, description: str = "") -> tuple:
     dom = capture_dom(driver)
-    html_snippet = extract_relevant_html(dom, "email")
+    # Call the external extractor (LLM-driven)
+    html_snippet = extract_relevant_html_llm(
+    dom=dom,
+    description=description,   # "username input box"
+    max_matches=3
+)
 
     prompt = f"""You are a Selenium expert.
 The following locator is broken: {old_locator}
