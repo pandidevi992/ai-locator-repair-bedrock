@@ -1,6 +1,7 @@
 from selenium.webdriver.common.by import By
 
 # Deliberately broken locator to simulate failure
-EMAILBOX_LOCATOR = (By.XPATH, "//input[@id='Email']")
-MESSAGES_LOCATOR = (By.XPATH, "//textarea[@id='message']")
-SEND_BUTTON_LOCATOR = (By.XPATH, "//span[contains(text(),'Send')]")
+USERNAME_LOCATOR = (By.XPATH, "//input[@id='Username']")
+NEXT_LOCATOR = (By.XPATH, "//button[@id='next-submit']")
+PASSWORD_LOCATOR = (By.XPATH, "//input[@name='credentials.passcode']")
+SUBMIT_LOCATOR = (By.XPATH, "//input[@type='submit' and @value='Login']")
